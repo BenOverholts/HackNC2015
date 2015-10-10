@@ -4,14 +4,19 @@ html
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat:700')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
   body
     .container-fluid.white-bg
-        .row
-            .col.col-md-12.text-center.top-margin-5.bottom-margin-5
-                h1 SparkVPN
+        .row.top-margin-5.bottom-margin-5
+            .col.col-xs-12.text-center
+                h1.headline sparkVPN
+                h1 your on-demand private network
     .container
-        .row
-            .col.col-md-12.text-center.top-margin-5.bottom-margin-5
+        .row.top-margin-5.bottom-margin-5
+            .col.col-xs-4.col-xs-offset-4.text-center.padding-horizontal-15
                 form(name="go", method="post")
-                    button.btn.btn-success.btn-lg(type="submit") Go
+                    button.btn.btn-success.btn-lg.btn-block(type="submit") Go
+        .navbar.navbar-fixed-bottom.pull-right
+                p Made with caffeine and lack of inspiration by <a href="http://www.benoverholts.com" target="_blank">Ben Overholts</a> and Vikash Sahu
     

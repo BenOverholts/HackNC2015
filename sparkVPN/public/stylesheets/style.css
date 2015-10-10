@@ -1,15 +1,23 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #EEEEEE;
+  letter-spacing: 1px;
+  font: 14px 'Lato', Helvetica, Arial, sans-serif;
+  background-color: #FCFCFC;
 }
 
 a {
-  color: #C5C5C5;
+  color: #666666;
 }
 
 .white-bg {
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
+    background-color: #FFFFFF;
+    border-bottom: thin solid #F5F5F5;
+}
+
+/* Fonts. */
+.headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 400%;
+    letter-spacing: 1px;
 }
 
 .top-margin-5 {
@@ -18,4 +26,13 @@ a {
 
 .bottom-margin-5 {
   margin-bottom: 5%;
+}
+
+.padding-horizontal-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.padding-left-30 {
+  padding-left: 30px;
 }
