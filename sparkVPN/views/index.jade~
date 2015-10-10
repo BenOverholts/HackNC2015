@@ -1,7 +1,17 @@
-extends layout
-
 html
-	head
-		title!= title
-	body
-		h1!= message
+  head
+    title!= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container-fluid.white-bg
+        .row
+            .col.col-md-12.text-center.top-margin-5.bottom-margin-5
+                h1 SparkVPN
+    .container
+        .row
+            .col.col-md-12.text-center.top-margin-5.bottom-margin-5
+                form(name="go", method="post")
+                    button.btn.btn-success.btn-lg(type="submit") Go
+    
