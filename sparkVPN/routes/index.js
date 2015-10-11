@@ -11,25 +11,50 @@ router.get('/', function(req, res, next) {
 
 /*gets called when user clicks 'submit' */
 router.post('/', function(req, res) {
-		/*request("https://www.google.com", function(error, response, body) {
-			console.log("Got response: " + body);
-		});*/
 
 	request({
 		url: 'https://api.digitalocean.com/v2/droplets',
-		method: 'GET',
+		method: 'POST',
+		json: {
+			name: "example.com",
+  			region: "nyc3",
+  			size: "512mb",
+  			image: "ubuntu-14-04-x64",
+  			ssh_keys: null,
+  			backups: false,
+  			ipv6: true,
+  			user_data: null,
+  			private_networking: null
+		},
 		headers: {
-			Authorization: 'Bearer ' + TOKEN
+			'Authorization': 'Bearer ' + TOKEN
 		}
 	}, function (error, response, body) {
-		res.render('index', { title: 'RETRIEVE DROPLET', message: body});
+		
+		/*var droplet1 = body.droplet;
+		var droplet_id = droplet1.id;
+
+		res.render('index', { title: 'RETRIEVE DROPLET', message: droplet_id});
+
+		setTimeout(function() {request({
+			url: 'https://api.digitalocean.com/v2/droplets/' + droplet_id,
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': 'Bearer ' + TOKEN
+			}
+		}, function (inner_error, inner_response, inner_body) {
+				var JsonBody = JSON.parse(inner_body);
+				var ipv4 = JsonBody.droplet.networks.v4[0].ip_address;
+				console.log(ipv4);
+		})}, 70000);*/
+		res.setHeader('Content-disposition', 'attachment; filename=theDocument.txt');
+		res.setHeader('Content-type', 'text/plain');
+		res.charset = 'UTF-8';
+		res.write("Hello, world");
+		res.end();
+
 	})
-
-
-	/*request("https://api.digitalocean.com/v2/droplets", function(error, response, body) {
-		res.render('index', { title: 'POST', message: body});
-	});*/
-
 });
 	
 module.exports = router;
