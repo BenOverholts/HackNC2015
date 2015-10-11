@@ -13,6 +13,10 @@ a {
     border-bottom: thin solid #F5F5F5;
 }
 
+.start-hidden {
+    display: none;
+}
+
 /* Fonts. */
 .headline {
     font-family: 'Montserrat', sans-serif;

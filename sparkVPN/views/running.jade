@@ -1,0 +1,67 @@
+html
+  head
+    title!= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat:700')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
+  body
+    .container-fluid.white-bg
+        .row.top-margin-5.bottom-margin-5
+            .col.col-xs-12.text-center
+                h1.headline sparkVPN
+                h1 thank you for using spark
+                
+    .container
+        .row.top-margin-5.bottom-margin-5
+            .col#frame.col-xs-4.col-xs-offset-4.padding-horizontal-15
+                div#5
+                    include ./ipdiv.jade
+        .row.top-margin-5.text-center
+                p made with caffeine and <a href="https://www.digitalocean.com" target="_blank">DigitalOcean</a> by <a href="http://www.benoverholts.com" target="_blank">Ben Overholts</a> and <a href="http://www.twitter.com/kashmoneymafia" target="_blank">Vikash Sahu</a>
+
+
+
+script.
+    var prog = 0;
+    var before = new Date();
+    var interval = 500;
+
+    myVar = setInterval(myTimer, 500);
+
+    function myTimer() {
+        now = new Date();
+        var elapsedTime = (now.getTime() - before.getTime());
+
+        if(elapsedTime > interval) {
+            prog += Math.floor(elapsedTime/interval) * 0.83;
+        }
+        else {
+            prog+=0.83
+        }
+
+        var bar = document.getElementsByClassName("progress-bar-striped")[0];
+        
+        bar.style.width = prog+'%';
+
+        if (prog>=100) {
+            bar.style.width=100+'%';
+            clearInterval(myVar);
+            third();
+        }
+
+        before = new Date();        
+    }
+
+    function hide(id) {
+        var element = document.getElementById(id);
+        element.style.display='none';
+    }
+
+    function unhide(id) {
+        var element = document.getElementById(id);
+        element.style.display='block';
+    }
+
+

@@ -8,11 +8,11 @@ var dropletName = 1;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   //in the response you'll send back to the router, render some stuff
-  res.render('index', { title: 'sparkVPN' });
+  res.render('running', { title: 'Express', message: 'Welcome to express' });
 });
 
 /*gets called when user clicks 'submit' */
-router.post('/', function(req, res) {
+router.post('/running', function(req, res) {
 
 	request({
 		url: 'https://api.digitalocean.com/v2/droplets',
@@ -48,7 +48,7 @@ router.post('/', function(req, res) {
 		}, function (inner_error, inner_response, inner_body) {
 				var JsonBody = JSON.parse(inner_body);
 				var ipv4 = JsonBody.droplet.networks.v4[0].ip_address;
-				res.render('ipdiv', { title: 'sparkVPN', ipaddr: ipv4 });
+				res.render('ipdiv', { ipaddr: ipv4 });
                 console.log(ipv4);
 		})}, 70000);
 	})

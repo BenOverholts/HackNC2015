@@ -13,6 +13,10 @@ a {
     border-bottom: thin solid #F5F5F5;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Fonts. */
 .headline {
     font-family: 'Montserrat', sans-serif;
@@ -31,4 +35,8 @@ a {
 .padding-horizontal-15 {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.padding-left-30 {
+  padding-left: 30px;
 }

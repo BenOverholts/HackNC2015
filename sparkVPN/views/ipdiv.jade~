@@ -1,0 +1,36 @@
+html
+  head
+    title!= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat:700')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
+  body
+    .container-fluid.white-bg
+        .row.top-margin-5.bottom-margin-5
+            .col.col-xs-12.text-center
+                h1.headline sparkVPN
+                h1 thank you for using spark
+                
+    .container
+        
+        .row.top-margin-5.bottom-margin-5
+            .col.col-md-4.col-xs-offset-2
+                div#5
+                    h3 to connect your machine:
+                        <p>
+                    h4 <p>open your PPTP vpn settings (top right system tray on linux and mac)
+                        <p>set the ip to your ephemeral host's ip address: 168.192.1.100
+                        <p>type spark for the user name
+                        <p>type secretkey for the password
+                        <p>be sure to enable MPPE point-to-point encryption
+            .col.col-md-4
+                img(src="/images/vpn-dialog.png")
+        .row.top-margin-5.bottom-margin-5
+            .col.col-xs-4.col-xs-offset-4.padding-horizontal-15
+                button.btn.btn-danger.btn-lg.btn-block Terminate Connection
+
+        .row.top-margin-5.text-center
+                p made with caffeine and <a href="https://www.digitalocean.com" target="_blank">DigitalOcean</a> by <a href="http://www.benoverholts.com" target="_blank">Ben Overholts</a> and <a href="http://www.twitter.com/kashmoneymafia" target="_blank">Vikash Sahu</a>
+
