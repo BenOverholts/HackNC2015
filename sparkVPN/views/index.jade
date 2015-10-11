@@ -16,6 +16,11 @@ html
     .container
         .row.top-margin-5.bottom-margin-5
             .col#frame.col-xs-4.col-xs-offset-4.text-center.padding-horizontal-15
+                form.form-signin(action="/login", method="post")
+                    h3.form-signin-heading enter your email
+                    input.input-block-level.text-center(type="test", name="username", placeholder="tim@thebomb.com")
+                    label.checkbox
+                        <input type="checkbox" value="bill-me-later" /> bill me later!
                 form(name="go", method="post")
                     button.btn.btn-success.btn-lg.btn-block(type="submit") Go
                 .progress

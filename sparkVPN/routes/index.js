@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
 			name: dropletName++,
   			region: "nyc3",
   			size: "512mb",
-  			image: "ubuntu-14-04-x64",
+  			image: 13914336,
   			ssh_keys: null,
   			backups: false,
   			ipv6: true,
